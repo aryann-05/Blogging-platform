@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/Authcontext';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
@@ -44,7 +44,7 @@ const Navbar = () => {
               Home
             </Link>
             
-            {isAuthenticated() ? (
+            {isAuthenticated ? (
               <>
                 <Link to="/dashboard" className="nav-link" onClick={closeMenu}>
                   Dashboard

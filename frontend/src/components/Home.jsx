@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { useAuth } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/Authcontext';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
@@ -17,14 +17,14 @@ const Home = () => {
               Welcome to MyApp
             </h1>
             <p className="hero-subtitle">
-              {isAuthenticated() 
+              {isAuthenticated 
                 ? `Hello ${user?.username || user?.fullName}! Welcome back to your dashboard.`
                 : "Your journey starts here. Join thousands of users who trust our platform."
               }
             </p>
             
             <div className="hero-buttons">
-              {isAuthenticated() ? (
+              {isAuthenticated ? (
                 <>
                   <Link to="/dashboard" className="btn btn-primary">
                     Go to Dashboard
@@ -125,7 +125,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      {!isAuthenticated() && (
+      {!isAuthenticated && (
         <section className="cta">
           <div className="container">
             <div className="cta-content">
