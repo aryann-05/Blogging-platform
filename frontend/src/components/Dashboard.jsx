@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../contexts/Authcontext';
 import CreateBlog from '../components/CreateBlog';
 import BlogList from '../components/BlogList';
-import Templates from '../components/Templates';
+import Templates from '../components/Templates'; // Added back import since Templates.jsx exists now
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -21,7 +22,7 @@ const Dashboard = () => {
 
   // Redirect if not authenticated
   useEffect(() => {
-    if (!isAuthenticated()) {
+    if (!isAuthenticated) {
       navigate('/login');
       return;
     }

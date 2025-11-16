@@ -206,8 +206,8 @@ export const AuthProvider = ({ children }) => {
       dispatch({
         type: AUTH_ACTIONS.LOGIN_SUCCESS,
         payload: {
-          user: data.data.user,
-          token: data.data.token
+          user: data.user,
+          token: data.token
         }
       });
 
@@ -222,20 +222,20 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Register function
-  const register = async (username, email, password) => {
+  const register = async (formData) => {
     try {
       dispatch({ type: AUTH_ACTIONS.REGISTER_START });
 
       const data = await apiCall('/auth/register', {
         method: 'POST',
-        body: JSON.stringify({ username, email, password }),
+        body: JSON.stringify(formData),
       });
 
       dispatch({
         type: AUTH_ACTIONS.REGISTER_SUCCESS,
         payload: {
-          user: data.data.user,
-          token: data.data.token
+          user: data.user,
+          token: data.token
         }
       });
 

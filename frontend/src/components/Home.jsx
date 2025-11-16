@@ -14,7 +14,7 @@ const Home = () => {
         <div className="hero-container">
           <div className="hero-content">
             <h1 className="hero-title">
-              Welcome to MyApp
+              Welcome to Blogging Platform
             </h1>
             <p className="hero-subtitle">
               {isAuthenticated 

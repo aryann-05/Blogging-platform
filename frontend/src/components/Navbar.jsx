@@ -27,7 +27,7 @@ const Navbar = () => {
       <div className="navbar-container">
         {/* Logo/Brand */}
         <Link to="/" className="navbar-brand" onClick={closeMenu}>
-          <h2>MyApp</h2>
+          <h2>Blogging Platform</h2>
         </Link>
 
         {/* Mobile menu button */}
